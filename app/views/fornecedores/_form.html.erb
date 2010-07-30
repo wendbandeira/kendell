@@ -1,0 +1,56 @@
+<% form_for(@fornecedore) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :data_cadastro %><br />
+    <%= f.text_field :data_cadastro %>
+  </p>
+  <p>
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </p>
+  <p>
+    <%= f.label :endereco %><br />
+    <%= f.text_field :endereco %>
+  </p>
+  <p>
+    <%= f.label :bairro %><br />
+    <%= f.text_field :bairro %>
+  </p>
+  <p>
+    <%= f.label :cnpj %><br />
+    <%= f.text_field :cnpj %>
+  </p>
+  <p>
+    <%= f.label :ins_estadual %><br />
+    <%= f.text_field :ins_estadual %>
+  </p>
+  <p>
+    <%= f.label :telefone %><br />
+    <%= f.text_field :telefone %>
+  </p>
+  <p>
+    <%= f.label :fax %><br />
+    <%= f.text_field :fax %>
+  </p>
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :site %><br />
+    <%= f.text_field :site %>
+  </p>
+  <p>
+    <%= f.label :cep %><br />
+    <%= f.text_field :cep %>
+  </p>
+  <p>
+    <%= f.label :cidade_id %><br />
+    <%= f.select :cidade_id, @cidade, :prompt => "Select..." %>
+  </p>
+  <p>
+    <%= f.submit button %>
+  </p>
+<% end %>
+

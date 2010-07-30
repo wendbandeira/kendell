@@ -1,0 +1,44 @@
+<% form_for(@funcionario) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </p>
+  <p>
+    <%= f.label :login %><br />
+    <%= f.text_field :login %>
+  </p>
+  <p>
+    <%= f.label :senha %><br />
+    <%= f.password_field :senha %>
+  </p>
+  <p>
+    <%= f.label :endereco %><br />
+    <%= f.text_field :endereco %>
+  </p>
+  <p>
+    <%= f.label :telefone %><br />
+    <%= f.text_field :telefone %>
+  </p>
+  <p>
+    <%= f.label :data_entrada %><br />
+    <%= f.datetime_select :data_entrada %>
+  </p>
+  <p>
+    <%= f.label :status %><br />
+    <%= f.check_box :status %>
+  </p>
+  <p>
+    <%= f.label :cargo_id %><br />
+    <%= f.select :cargo_id, @cargo, :prompt => "Select..." %>
+  </p>
+  <p>
+    <%= f.label :cidade_id %><br />
+    <%= f.select :cidade_id, @cidade, :prompt => "Select..." %>
+  </p>
+  <p>
+    <%= f.submit button %>
+  </p>
+<% end %>
+

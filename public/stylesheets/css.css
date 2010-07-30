@@ -1,0 +1,154 @@
+/*-------------------------------------------
+Reset CSS
+-------------------------------------------*/
+*{
+	margin:0;
+	padding:0;
+	list-style:none;
+	font-family:"Trebuchet MS", Arial, Verdana, Helvetica, Sans-serif;
+}
+
+header, footer, nav{display:block;}
+
+body{background:#F1F1F1;}
+
+a { color: #000; font-size:12px; }
+a:hover { color: #666;}
+
+
+/*-------------------------------------------
+Estruturacao
+-------------------------------------------*/
+#geral{
+	margin:0 auto;
+	width:900px;
+}
+.line{width:900px; margin:0 auto;}
+
+/*-------------------------------------------
+Header
+-------------------------------------------*/
+header{
+	height:90px;
+	width:100%;
+	background:#496889 url(/images/bg.jpg) repeat-x center bottom;
+	margin:0 0 30px 0;
+	
+	border-bottom:1px solid #eee;
+	-webkit-box-shadow:1px 3px 5px #666;
+	-moz-box-shadow:1px 3px 5px #666;
+}
+
+/*-------------------------------------------
+ Nav
+-------------------------------------------*/
+nav{
+	width:200px;
+	float:left;
+	margin:25px 0 0 0;
+}
+nav ul {display:block;}
+nav li a {
+	padding:0 15px 0 0; 
+	color:#FFF; 
+	text-decoration:none; 
+	float:left;
+	font-size:14px;
+	text-shadow:1px 2px 3px #000;
+}
+nav li a:hover{
+	text-decoration:underline;
+	color:#EEE;
+}
+/*-------------------------------------------
+ Conteudo
+-------------------------------------------*/
+#conteudo{
+	width:700px;
+	background:#fff;
+	float:left;
+	padding:5px;
+	margin:0 0 20px 0;
+	
+	border-bottom:1px solid #FFF;
+	-webkit-box-shadow:0 0 5px #666;
+	-moz-box-shadow:0 0 5px #666;	
+}
+
+#conteudo h1{
+	background:#E6EDF7;
+	font-size:26px;
+	color:#000;
+	padding:10px 5px;
+	
+	text-shadow:2px 2px 2px #FFF;
+}
+
+/*-------------------------------------------
+ Forms
+-------------------------------------------*/
+form {width:500px;}
+form label{
+	font-size:14px;
+	color:#666;
+	font-weight:bold;
+	margin:10px 0;
+	float:left;
+	clear:both;
+	width:310px;
+}
+form input {
+	border:1px solid #CCC; 
+	padding:5px; 
+	width:280px;
+	font-size:12px;
+}
+
+
+/*-------------------------------------------
+ Footer
+-------------------------------------------*/
+footer{
+	height:20px;
+	clear:both;
+}
+
+/*-------------------------------------------
+Erros?
+-------------------------------------------*/
+.fieldWithErrors {
+	padding: 2px;
+	background-color: red;
+	display: table;
+}
+
+#errorExplanation {
+	width: 400px;
+	border: 2px solid red;
+	padding: 7px;
+	padding-bottom: 12px;
+	margin-bottom: 20px;
+	background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+	text-align: left;
+	font-weight: bold;
+	padding: 5px 5px 5px 15px;
+	font-size: 12px;
+	margin: -7px;
+	background-color: #c00;
+	color: #fff;
+}
+
+#errorExplanation p {
+	color: #333;
+	margin-bottom: 0;
+	padding: 5px;
+}
+
+#errorExplanation ul li {
+	font-size: 12px;
+	list-style: square;
+}
+

@@ -1,0 +1,12 @@
+<% form_for(@cargo) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </p>
+  <p>
+    <%= f.submit button %>
+  </p>
+<% end %>
+

@@ -1,0 +1,34 @@
+<h1><%= @cliente.nome %>
+	<%= link_to 'Editar', {:controller => :clientes, :action => 'edit'}, :class => 'botao_editar' %>
+	<%= render :partial => voltar %>
+</h1>
+
+<div class="dentro">
+	<fieldset>
+		<legend>Informações Pessoais</legend>
+		<li><strong>CPF:</strong>  <%= @cliente.cpf %></li>
+		<li><strong>Rg:</strong>   <%= @cliente.rg %></li>
+		<li><strong>Email:</strong> <%= @cliente.email %></li>
+		<li><strong>Sexo:</strong> <%= @cliente.sexo %></li>
+		<li><strong>Profissão:</strong> <%= @cliente.profissao %></li>
+	</fieldset>
+
+	<fieldset id="cadastro">
+		<legend>Contatos</legend>
+		<li><strong>Telefone:</strong> <%= @cliente.telefone %></li>
+		<li><strong>Celular:</strong> <%= @cliente.celular %></li>
+		<li><strong>Telefone Contato:</strong> <%= @cliente.telefone_contato %></li>
+	</fieldset>
+
+	<fieldset id="cadastro">
+		<legend>Localização</legend>
+		<li><strong>Endereço:</strong> <%= @cliente.endereco %></li>
+		<li><strong>Bairro:</strong> <%= @cliente.bairro %></li>
+		<li><strong>CEP:</strong> <%= @cliente.cep %></li>
+		<li><strong>Cidade:</strong> <%= @cliente.cidade.nome ? "#{@cliente.cidade.nome}" : "Precisa cadastrar cidades no sistema" %></li>
+	</fieldset>
+
+
+
+</div>
+

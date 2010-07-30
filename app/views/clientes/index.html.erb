@@ -1,0 +1,40 @@
+<h1>Clientes
+<%= link_to "Nova Venda", {:controller => :clientes, :action => 'new'}, :class => 'botao_novo' %>
+<%= render :partial => voltar %>
+</h1>
+
+<% form_remote_tag :url => {:controller => :clientes, :action => 'busca_clientes'}, :method => "get" do %>
+   <%= label_tag :q, "Buscar" %>
+   <%= text_field_tag :q %>
+   <%= submit_tag "Ok" %>
+<% end %>
+
+<div id="res_busca">
+
+<div class="dentro">
+<% unless @clientes.blank? %>
+<% @clientes.each do |cliente| %>
+
+<fieldset>
+	<legend><%=h cliente.nome %></legend>
+	<li><b> CPF </b> <%=h cliente.cpf %></li>
+	<li><b> Rg </b> <%=h cliente.rg %></li>
+	<li><b> Telefone</b> <%=h cliente.telefone %></li>
+	<li><b> Celular</b> <%=h cliente.celular %></li>
+	<li><b> Telefone para Contato</b><%=h cliente.telefone_contato %></li>
+
+	<div class="ferramentas">
+		<%= link_to "Detalhes", :controller => :clientes, :action => 'show', :id => cliente.id %>
+		<%= link_to 'Editar', :controller => :clientes, :action => 'edit', :id => cliente.id %>
+		<%= link_to 'Deletar', cliente, :confirm => 'Tem certeza?', :method => :delete  %>
+	</div>
+
+</fieldset>
+<%end%>
+
+<% else %>
+<div class="aviso">Não existem cliente cadastrados.</div>
+<%end%>
+</div>
+</div>
+

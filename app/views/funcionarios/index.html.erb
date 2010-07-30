@@ -1,0 +1,37 @@
+<h1>Listing funcionarios</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Login</th>
+    <th>Senha</th>
+    <th>Endereco</th>
+    <th>Telefone</th>
+    <th>Data entrada</th>
+    <th>Status</th>
+    <th>Cargo</th>
+    <th>Cidade</th>
+  </tr>
+
+<% @funcionarios.each do |funcionario| %>
+  <tr>
+    <td><%=h funcionario.nome %></td>
+    <td><%=h funcionario.login %></td>
+    <td><%=h funcionario.senha %></td>
+    <td><%=h funcionario.endereco %></td>
+    <td><%=h funcionario.telefone %></td>
+    <td><%=h funcionario.data_entrada %></td>
+    <td><%=h funcionario.status %></td>
+    <td><%=h funcionario.cargo.nome %></td>
+    <td><%=h funcionario.cidade.nome %></td>
+    <td><%= link_to 'Show', funcionario %></td>
+    <td><%= link_to 'Edit', edit_funcionario_path(funcionario) %></td>
+    <td><%= link_to 'Destroy', funcionario, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New funcionario', new_funcionario_path %>
+

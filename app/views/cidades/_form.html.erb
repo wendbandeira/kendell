@@ -1,0 +1,16 @@
+<% form_for(@cidade) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </p>
+  <p>
+    <%= f.label :estado_id %><br />
+  	<%= f.select :estado_id, @estado, :prompt => "Select..." %>
+  </p>
+  <p>
+    <%= f.submit button %>
+  </p>
+<% end %>
+

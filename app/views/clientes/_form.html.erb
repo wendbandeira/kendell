@@ -1,0 +1,34 @@
+<% form_for(@cliente) do |f| %>
+<%= f.error_messages %>
+
+<div class="dentro" style="height:400px!important;">
+	<fieldset id="cadastro">
+		<legend>Informações Pessoais</legend>
+		<label>Nome: <%= f.text_field :nome %></label>
+		<label>CPF:  <%= f.text_field :cpf %></label>
+		<label>Rg:   <%= f.text_field :rg %></label>
+		<label>Email: <%= f.text_field :email %></label>
+		<label>Sexo: <%= f.select "sexo", {"MASCULINO" => "MASCULINO", "FEMININO" => "FEMININO"} %></label>
+		<label>Profissão: <%= f.text_field :profissao %></label>
+	</fieldset>
+
+	<fieldset id="cadastro">
+		<legend>Contatos</legend>
+		<label>Telefone: <%= f.text_field :telefone %></label>
+		<label>Celular: <%= f.text_field :celular %></label>
+		<label>Telefone Contato: <%= f.text_field :telefone_contato %></label>
+	</fieldset>
+
+	<fieldset id="cadastro">
+		<legend>Localização</legend>
+		<label>Endereço: <%= f.text_field :endereco %></label>
+		<label> Bairro: <%= f.text_field :bairro %></label>
+		<label>CEP: <%= f.text_field :cep %></label>
+		<label>Cidade: <%= f.select :cidade_id, @cidade, :prompt => "Select..." %></label>
+	</fieldset>
+</div>
+
+<%= f.submit button, :class => 'botao' %>
+
+<% end %>
+

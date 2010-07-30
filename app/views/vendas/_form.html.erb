@@ -1,0 +1,35 @@
+<% form_for(@venda) do |f| %>
+	<%= f.error_messages %>
+
+	<label> Produtos
+		<%= f.select :produto_id, @produto, :prompt => "Select..." %>
+	</label>
+
+	<label>Funcionário
+		<%= f.select :funcionario_id, @funcionario, :prompt => "Select" %>
+	</label>
+
+	<label>Cliente
+		<%= f.select :cliente_id, @clientes, :prompt => "Select..." %>
+	</label>
+
+	<label>Data da venda
+		<%= f.datetime_select :data_venda %>
+	</label>
+
+	<label>Percelas
+		<%= f.text_field :parcelas %>
+	</label>
+
+	<label>Quantidade
+		<%= f.text_field :quantidade %>
+	</label>
+
+	<label>Valor total
+		<%= f.text_field :valor_total %>
+	</label>
+
+	<%= f.submit button, :class => 'botao' %>
+
+	<% end %>
+

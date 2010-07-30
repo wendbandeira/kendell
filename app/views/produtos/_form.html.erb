@@ -1,0 +1,42 @@
+<% form_for(@produto) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :data_cadastro %><br />
+    <%= f.text_field :data_cadastro %>
+  </p>
+    <p>
+    <%= f.label :categoria%>
+    <%= f.select :categoria_id, @categoria, :command => "Select" %>
+    <%= f.label :fornecedore %>
+    <%= f.select :fornecedore_id, @fornecedore, :command => "Select" %>
+  </p>
+  <p>
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </p>
+  <p>
+    <%= f.label :tamanho %><br />
+    <%= f.text_field :tamanho %>
+  </p>
+  <p>
+    <%= f.label :valor_compra %><br />
+    <%= f.text_field :valor_compra %>
+  </p>
+  <p>
+    <%= f.label :valor_venda %><br />
+    <%= f.text_field :valor_venda %>
+  </p>
+  <p>
+    <%= f.label :quantidade %><br />
+    <%= f.text_field :quantidade %>
+  </p>
+  <p>
+    <%= f.label :n_nota_fiscal %><br />
+    <%= f.text_field :n_nota_fiscal %>
+  </p>
+  <p>
+    <%= f.submit button %>
+  </p>
+<% end %>
+

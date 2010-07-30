@@ -1,0 +1,34 @@
+<!DOCTYPE html >
+<html lang="pt-br">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>index.html</title>
+
+	<%= stylesheet_link_tag 'style'%>
+	<%= javascript_include_tag :defaults %>
+
+</head>
+<body>
+<div id="geral">
+	<div id="bar_top">
+		<div class="line"><h2>Bem-vindo</h2></div>
+	</div>
+	<nav>
+		<ul>
+			<li><%= link_to '<img src="/images/ico/home.png" height="30" width="30" /> Painel', :controller => :home, :action => 'index' %></li>				
+			<li><%= link_to '<img src="/images/ico/cliente.png" height="30" width="30" /> Clientes', :controller => :clientes, :action => 'index' %></li>
+			<li><%= link_to '<img src="/images/ico/vendas.png" height="30" width="30" /> Vendas', :controller => :vendas, :action => 'index'%></li>
+			<li><%= link_to '<img src="/images/ico/produtos.png" height="30" width="30" /> Produtos', :controller => :produtos, :action => 'index' %></li>
+			<li><%= link_to '*Cargos', :controller => :cargos, :action => 'index' %></li>
+			<li><%= link_to '*Categorias', :controller => :categorias, :action => 'index' %></li>
+			<li><%= link_to '*Cidades', :controller => :cidades, :action => 'index' %></li>
+			<li><%= link_to '*Estados', :controller => :estados, :action => 'index' %></li>
+			<li><%= link_to '*Fornecedores', :controller => :fornecedores, :action => 'index' %></li>
+			<li><%= link_to '*Funcionários', :controller => :funcionarios, :action => 'index' %></li>
+		</ul>
+	</nav>
+
+	<div id="conteudo"><%= yield %></div>	
+</div>
+</body>
+</html>

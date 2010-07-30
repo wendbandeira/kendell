@@ -1,0 +1,35 @@
+<h1>Vendas
+<%= link_to "Nova Venda", {:controller => :vendas, :action => 'new'}, :class => 'botao_novo' %>
+</h1>
+
+<% unless @vendas.blank? %>
+<table>
+	<tr>
+		<th>Produto</th>
+		<th>Funcionario</th>
+		<th>Cliente</th>
+		<th>Data venda</th>
+		<th>Parcelas</th>
+		<th>Quantidade</th>
+		<th>Valor total</th>
+	</tr>
+	<% @vendas.each do |vendas| %>
+	<tr>
+		<td><%#=h vendas.produto.nome %></td>
+		<td><%#=h vendas.funcionario.nome %></td>
+		<td><%#=h vendas.cliente.nome %></td>
+		<td><%=h vendas.data_venda %></td>
+		<td><%=h vendas.parcelas %></td>
+		<td><%=h vendas.quantidade %></td>
+		<td><%=h vendas.valor_total %></td>
+		<td><%= link_to 'Show', vendas %></td>
+		<td><%= link_to 'Edit', edit_venda_path(vendas) %></td>
+		<td><%= link_to 'Destroy', vendas, :confirm => 'Are you sure?', :method => :delete %></td>
+	</tr>
+	<% end %>
+</table>
+
+<% else %>
+<div class="aviso">Sem vendas no momento</div>
+<% end %>
+</div>

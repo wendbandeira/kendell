@@ -1,0 +1,43 @@
+<h1>Listing fornecedores</h1>
+
+<table>
+  <tr>
+    <th>Data cadastro</th>
+    <th>Nome</th>
+    <th>Endereco</th>
+    <th>Bairro</th>
+    <th>Cnpj</th>
+    <th>Ins estadual</th>
+    <th>Telefone</th>
+    <th>Fax</th>
+    <th>Email</th>
+    <th>Site</th>
+    <th>Cep</th>
+    <th>Cidade</th>
+  </tr>
+
+<% @fornecedores.each do |fornecedore| %>
+  <tr>
+    <td><%=h fornecedore.data_cadastro %></td>
+    <td><%=h fornecedore.nome %></td>
+    <td><%=h fornecedore.endereco %></td>
+    <td><%=h fornecedore.bairro %></td>
+    <td><%=h fornecedore.cnpj %></td>
+    <td><%=h fornecedore.ins_estadual %></td>
+    <td><%=h fornecedore.telefone %></td>
+    <td><%=h fornecedore.fax %></td>
+    <td><%=h fornecedore.email %></td>
+    <td><%=h fornecedore.site %></td>
+    <td><%=h fornecedore.cep %></td>
+    <td><%=h fornecedore.cidade.nome %></td>
+    <td><%= link_to 'Show', fornecedore %></td>
+    <td><%= link_to 'Edit', edit_fornecedore_path(fornecedore) %></td>
+    <td><%= link_to 'Destroy', fornecedore, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New fornecedore', new_fornecedore_path %>
+
