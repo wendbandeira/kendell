@@ -15,7 +15,7 @@
 	</div>
 	<nav>
 		<ul>
-			<li><%= link_to '<img src="/images/ico/home.png" height="30" width="30" /> Painel', :controller => :home, :action => 'index' %></li>				
+			<li><%= link_to '<img src="/images/ico/home.png" height="30" width="30" /> Painel', :controller => :home, :action => 'index' %></li>
 			<li><%= link_to '<img src="/images/ico/cliente.png" height="30" width="30" /> Clientes', :controller => :clientes, :action => 'index' %></li>
 			<li><%= link_to '<img src="/images/ico/vendas.png" height="30" width="30" /> Vendas', :controller => :vendas, :action => 'index'%></li>
 			<li><%= link_to '<img src="/images/ico/produtos.png" height="30" width="30" /> Produtos', :controller => :produtos, :action => 'index' %></li>
@@ -28,7 +28,8 @@
 		</ul>
 	</nav>
 
-	<div id="conteudo"><%= yield %></div>	
+	<div id="conteudo"><%= yield %></div>
 </div>
 </body>
 </html>
+
