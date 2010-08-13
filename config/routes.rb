@@ -1,6 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   map.devise_for :users
 
+  map.resources :user
+
   map.resources :events
 
   map.resources :funcionarios

@@ -7,7 +7,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.rememberable
       t.trackable
       # t.lockable
-
       t.timestamps
     end
 
@@ -21,3 +20,4 @@ class DeviseCreateUsers < ActiveRecord::Migration
     drop_table :users
   end
 end
+

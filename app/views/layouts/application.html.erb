@@ -9,9 +9,16 @@
 
 </head>
 <body>
-<div id="geral">
+ <div id="geral">
 	<div id="bar_top">
-		<div class="line"><h2>Bem-vindo</h2></div>
+		<div class="line"><h2>Bem-vindo</h2>
+        <% if  user_signed_in? %>
+		        <%= current_user.email %> não é você?
+		        <%= link_to "Sair", destroy_user_session_path %>
+		    <% else %>
+
+		        <% end %>
+		</div>
 	</div>
 	<nav>
 		<ul>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100807234729) do
+ActiveRecord::Schema.define(:version => 20100812000926) do
 
   create_table "cargos", :force => true do |t|
     t.string   "nome"
@@ -125,6 +125,12 @@ ActiveRecord::Schema.define(:version => 20100807234729) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "nome"
+    t.string   "endereco"
+    t.string   "telefone"
+    t.datetime "data_entrada"
+    t.integer  "cidade_id"
+    t.integer  "cargo_id"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
