@@ -12,26 +12,27 @@
     <th>Cargo</th>
     <th>Cidade</th>
   </tr>
-
-<% @funcionarios.each do |funcionario| %>
+<% unless @funcionarios.blank? %>
+<% @funcionarios.each do |funcionario|  %>
   <tr>
     <td><%=h funcionario.nome %></td>
     <td><%=h funcionario.login %></td>
     <td><%=h funcionario.senha %></td>
     <td><%=h funcionario.endereco %></td>
     <td><%=h funcionario.telefone %></td>
-    <td><%=h funcionario.data_entrada %></td>
-    <td><%=h funcionario.status %></td>
-    <td><%=h funcionario.cargo.nome %></td>
-    <td><%=h funcionario.cidade.nome %></td>
-    <td><%= link_to 'Show', funcionario %></td>
-    <td><%= link_to 'Edit', edit_funcionario_path(funcionario) %></td>
-    <td><%= link_to 'Destroy', funcionario, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%=h funcionario.data_entrada %></td> 
+    <td><%=h funcionario.status ? "Ativo" : "Inativo" %></td>
+    <td><%=h funcionario.cargo.nome if funcionario.cargo %></td>
+    <td><%=h funcionario.cidade.nome if funcionario.cidade %></td>
+    <td><%= link_to 'Mostrar', funcionario %></td>
+    <td><%= link_to 'Editar', edit_funcionario_path(funcionario) %></td>
+    <td><%= link_to 'Remover', funcionario, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
+<% end %>
 
 <br />
 
-<%= link_to 'New funcionario', new_funcionario_path %>
+<%= link_to 'Novo funcionário', new_funcionario_path %>
 

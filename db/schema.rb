@@ -125,10 +125,6 @@ ActiveRecord::Schema.define(:version => 20100812000926) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "nome"
-    t.string   "endereco"
-    t.string   "telefone"
-    t.datetime "data_entrada"
     t.integer  "cidade_id"
     t.integer  "cargo_id"
   end

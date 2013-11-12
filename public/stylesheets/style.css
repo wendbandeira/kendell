@@ -113,7 +113,8 @@ nav img{float:left; margin:0 10px 0 5px; vertical-align:middle;}
 	-moz-box-shadow:0 0 10px #000;
 }
 
-.dentro{height:90%; overflow:auto; margin:0 0 20px 0;}
+.dentro{ overflow:auto; margin:0 0 20px 0;}
+.lista {margin: 0 0 20px 0;}
 
 #conteudo h1{
 	font-size:22px;

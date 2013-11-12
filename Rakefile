@@ -5,6 +5,8 @@ require(File.join(File.dirname(__FILE__), 'config', 'boot'))
 
 require 'rake'
 require 'rake/testtask'
-require 'rake/rdoctask'
+
+gem 'rdoc', ">= 2.4.2"
+require 'rdoc/task'
 
 require 'tasks/rails'
