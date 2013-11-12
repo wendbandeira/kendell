@@ -31,6 +31,10 @@
 
 </fieldset>
 <%end%>
+<%= will_paginate @clientes,
+	:previous_label => "Anterior",
+	:next_label => "Proximo"
+ %>
 
 <% else %>
 <div class="aviso">Não existem cliente cadastrados.</div>

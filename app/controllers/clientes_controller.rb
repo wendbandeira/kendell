@@ -3,7 +3,9 @@ class ClientesController < ApplicationController
   before_filter :load_cidades, :only => [:new, :create, :edit, :update]
 
   def index
-    @clientes = Cliente.all :order => 'nome'
+    #@clientes = Cliente.all :order => 'nome'
+
+    @clientes = Cliente.paginate :page  => params[:page], :per_page => 2
 
     respond_to do |format|
       format.html # index.html.erb
