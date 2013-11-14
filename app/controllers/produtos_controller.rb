@@ -5,7 +5,8 @@ class ProdutosController < ApplicationController
   before_filter [:load_categorias, :load_fornecedores], :only=>[:new, :edit, :update, :create]
 
   def index
-    @produtos = Produto.all
+    @produtos = Produto.paginate :page => params[:page], :per_page => 2
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @produtos }
@@ -71,8 +72,6 @@ class ProdutosController < ApplicationController
     end
   end
 
-  # DELETE /produtos/1
-  # DELETE /produtos/1.xml
   def destroy
     @produto = Produto.find(params[:id])
     @produto.destroy
@@ -82,6 +81,15 @@ class ProdutosController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def buscar_produtos
+    @produtos = Produto.find(:all, :order => 'nome', :conditions => ['nome LIKE ?', "%#{params[:produto]}%"])
+
+    render :update do |page|
+      page.replace_html "res_busca", :partial => "produtos/busca_produtos", :object => @produtos
+    end
+  end 
+
 end
 
 private

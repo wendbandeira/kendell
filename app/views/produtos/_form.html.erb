@@ -1,15 +1,15 @@
 <% form_for(@produto) do |f| %>
   <%= f.error_messages %>
 
+    <%= f.label :data_cadastro %>
+    <%= f.text_field :data_cadastro, :value => Date.current %>
   <p>
-    <%= f.label :data_cadastro %><br />
-    <%= f.text_field :data_cadastro %>
-  </p>
-    <p>
     <%= f.label :categoria%>
-    <%= f.select :categoria_id, @categoria, :command => "Select" %>
-    <%= f.label :fornecedore %>
-    <%= f.select :fornecedore_id, @fornecedore, :command => "Select" %>
+    <%= f.select :categoria_id, @categoria %>
+  </p>
+  <p> 
+    <%= f.label :fornecedor %>
+    <%= f.select :fornecedore_id, @fornecedore %>
   </p>
   <p>
     <%= f.label :nome %><br />

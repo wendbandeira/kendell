@@ -1,0 +1,20 @@
+<h2>Resultado</h2>
+
+<% unless @produtos.blank? %>
+	<% @produtos.each do |produto| %>
+			<fieldset> 
+				<legend><%=h produto.nome %></legend>
+				<li><b> Tamanho: </b> <%=h produto.tamanho %> <b> Quantidade: </b> <%=h produto.quantidade %></li>   
+				<li><b> V. Compra: </b> <%=h produto.valor_compra %> <b> V. Venda: </b> <%=h produto.valor_venda %></li>    
+				<li><b> Tamanho: </b> <%=h produto.tamanho %> <b> Categoria: </b> <%=h produto.categoria.nome %></li>  
+				<li><b> Fornecedor: </b> <%=h produto.fornecedore.nome %></li>  
+				<li><b> Nota Fiscal: </b> <%=h produto.n_nota_fiscal %></li> 
+
+				<div class="ferramentas">
+					<%= link_to 'Detalhes', :controller => :produtos, :action => 'show', :id => produto.id %>
+					<%= link_to 'Editar', :controller => :produtos, :action => 'edit', :id => produto.id %>
+					<%= link_to 'Deletar', produto, :confirm => "Tem certeza?" %>
+				</div>   
+			</fieldset>
+	<% end %>
+<% end %>

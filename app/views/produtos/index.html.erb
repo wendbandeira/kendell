@@ -1,37 +1,1 @@
-<h1>Listing produtos</h1>
-
-<table>
-  <tr>
-    <th>Data cadastro</th>
-    <th>Nome</th>
-    <th>Tamanho</th>
-    <th>Valor compra</th>
-    <th>Valor venda</th>
-    <th>Quantidade</th>
-    <th>N nota fiscal</th>
-    <th>Fornecedore</th>
-    <th>Categoria</th>
-  </tr>
-
-<% @produtos.each do |produto| %>
-  <tr>
-    <td><%=h produto.data_cadastro %></td>
-    <td><%=h produto.nome %></td>
-    <td><%=h produto.tamanho %></td>
-    <td><%=h produto.valor_compra %></td>
-    <td><%=h produto.valor_venda %></td>
-    <td><%=h produto.quantidade %></td>
-    <td><%=h produto.n_nota_fiscal %></td>
-    <td><%=h produto.fornecedore.nome %></td>
-    <td><%=h produto.categoria %></td>
-    <td><%= link_to 'Show', produto %></td>
-    <td><%= link_to 'Edit', edit_produto_path(produto) %></td>
-    <td><%= link_to 'Destroy', produto, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'Novo produto', new_produto_path %>
-
+<h1>Lista de Produtos<%= link_to "Novo produto", {:controller => :produtos, :action => 'new'}, :class => 'botao_novo' %><%= render :partial => voltar %></h1><% form_remote_tag :url => {:controller => :produtos, :action => 'buscar_produtos'}, :method => "get" do %>   <%= label_tag :produto, "Buscar" %>   <%= text_field_tag :produto %>   <%= submit_tag "Ok" %><% end %><div id="res_busca">	<div class="lista">		<% unless @produtos.blank? %>			<% @produtos.each do |produto| %>				<fieldset> 					<legend><%=h produto.nome %></legend>					<li><b> Tamanho: </b> <%=h produto.tamanho %> <b> Quantidade: </b> <%=h produto.quantidade %></l>   					<li><b> V. Compra: </b> <%=h produto.valor_compra %> <b> V. Venda: </b> <%=h produto.valor_venda %></li>    					<li><b> Tamanho: </b> <%=h produto.tamanho %> <b> Categoria: </b> <%=h produto.categoria.nome %></li>  					<li><b> Fornecedor: </b> <%=h produto.fornecedore.nome %></li>  					<li><b> Nota Fiscal: </b> <%=h produto.n_nota_fiscal %></li> 					<div class="ferramentas">						<%= link_to 'Mostrar', produto %>						<%= link_to 'Editar', edit_produto_path(produto) %>						<%= link_to 'Remover', produto, :confirm => 'Tem certeza que quer excluir ?', :method => :delete %>					</div>				</fieldset>			<% end %>		<%= will_paginate @produtos,			:previous_label => "Anterior",			:next_label => "Próximo"		 %>		<% end %>	</div></div>

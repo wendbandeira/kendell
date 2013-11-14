@@ -1,28 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.devise_for :users
-
-  map.resources :user
-
-  map.resources :events
-
-  map.resources :funcionarios
-
-  map.resources :cargos
-
-  map.resources :vendas
-
-  map.resources :produtos, :collection => { :buscar_produtos => :get}
-
-  map.resources :categorias
-
-  map.resources :fornecedores
-
-  map.resources :estados
-
-  map.resources :cidades
-
-  map.resources :clientes, :collection => { :busca_clientes => :get}
-
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -41,7 +17,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # Sample resource route with sub-resources:
   #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
-
+  
   # Sample resource route with more complex sub-resources
   #   map.resources :products do |products|
   #     products.resources :comments
@@ -55,7 +31,7 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  map.root :controller => "home"
+  # map.root :controller => "welcome"
 
   # See how all your routes lay out with "rake routes"
 
@@ -65,4 +41,3 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end
-

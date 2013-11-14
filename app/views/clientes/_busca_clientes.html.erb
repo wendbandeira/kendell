@@ -2,13 +2,13 @@
 
 <% @clientes.each do |cliente| %>
 
-<fieldset>
+	<fieldset>
 	<legend><%=h cliente.nome %></legend>
-	<li><b> CPF </b> <%=h cliente.cpf %></li>
-	<li><b> Rg </b> <%=h cliente.rg %></li>
-	<li><b> Telefone</b> <%=h cliente.telefone %></li>
-	<li><b> Celular</b> <%=h cliente.celular %></li>
-	<li><b> Telefone para Contato</b><%=h cliente.telefone_contato %></li>
+		<li><b> CPF </b> <%=h cliente.cpf %></li>
+		<li><b> Rg </b> <%=h cliente.rg %></li>
+		<li><b> Telefone</b> <%=h cliente.telefone %></li>
+		<li><b> Celular</b> <%=h cliente.celular %></li>
+		<li><b> Telefone para Contato</b><%=h cliente.telefone_contato %></li>
 
 	<div class="ferramentas">
 		<%= link_to "Detalhes", :controller => :clientes, :action => 'show', :id => cliente.id %>
@@ -16,6 +16,6 @@
 		<%= link_to 'Deletar', cliente, :confirm => 'Tem certeza?', :method => :delete  %>
 	</div>
 
-</fieldset>
+	</fieldset>
 <%end%>
 
